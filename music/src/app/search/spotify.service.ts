@@ -44,6 +44,10 @@ export class SpotifyService{
   getTrack(id:string):Observable<any[]>{
     return this.query(`/tracks/${id}`);
   }
+  
+  getArtist(id: string): Observable<any[]> {
+    return this.query(`/artists/${id}`);
+  }
 
   refreshToken(): void{
     const header = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('Access-Control-Allow-Origin', 'accounts.spotify.com');
