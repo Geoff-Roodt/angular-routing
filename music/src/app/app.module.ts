@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {LocationStrategy, HashLocationStrategy, APP_BASE_HREF} from '@angular/common';
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

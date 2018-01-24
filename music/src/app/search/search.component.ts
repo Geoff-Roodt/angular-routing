@@ -36,6 +36,10 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['search'], {queryParams: {query:query}}).then(_ => this.search());
   }
 
+  refreshToken(): void{
+    this.spotify.refreshToken();
+  }
+
   ngOnInit() {
     this.search();
   }
