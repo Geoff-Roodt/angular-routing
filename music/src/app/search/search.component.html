@@ -1,8 +1,19 @@
 <h1>Search</h1>
-<p>
-  <input type="text" #newquery [value]="query" (keydown.enter)="submit(newquery.value)">
-  <button (click)="submit(newquery.value)">Search</button>
-</p>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="col-lg-5 form-group">
+      <input type="text" #newquery [value]="query" (keydown.enter)="submit(newquery.value)" class="form-control">
+    </div>
+    <div class="col-lg-7">
+      <button (click)="submit(newquery.value)" class="btn btn-primary">Search</button>
+      <button type="button" (click)="refreshToken()" class="btn btn-primary">Refresh Token</button>
+    </div>
+  </div>
+  <div class="container text-danger text-center">
+    <span>Tokens are good for 1 hour</span>
+  </div>
+</div>
+
 <div *ngIf="results.length">
   <h1>Results</h1>
 
@@ -29,8 +40,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <button type="button" (click)="refreshToken()">Refresh Token</button>
 </div>
