@@ -17,6 +17,7 @@ export class SpotifyService{
   static SECRET = 'b74f19676e864a01959513f307e22d70';
 
   constructor(private http:Http, private httpClient:HttpClient){
+    this.refreshToken();
   }
 
   query( URL: string, params?: Array<string> ): Observable<any[]> {
@@ -48,7 +49,7 @@ export class SpotifyService{
   getArtist(id: string): Observable<any[]> {
     return this.query(`/artists/${id}`);
   }
-  
+
   getAlbum(id: string): Observable<any[]> {
     return this.query(`/albums/${id}`);
   }

@@ -10,7 +10,8 @@
     </div>
   </div>
   <div class="container text-danger text-center">
-    <span>Tokens are good for about 20 mins</span>
+    <div *ngIf="spotify.token"><span>Token has been issued</span></div>
+    <div *ngIf="!spotify.token"><span>You have no token</span></div>
   </div>
 </div>
 
@@ -45,5 +46,7 @@
         </div>
       </div>
     </div>
+
   </div>
+
 </div>

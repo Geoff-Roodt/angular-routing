@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
-import {LocationStrategy, HashLocationStrategy, APP_BASE_HREF} from '@angular/common';
 
 
 import { AppComponent } from './app.component';
@@ -36,9 +35,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    SpotifyInjectable,
-    {provide: APP_BASE_HREF, useValue: '/'},
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    SpotifyInjectable
   ],
   bootstrap: [AppComponent]
 })
