@@ -11,7 +11,7 @@
   </div>
   <div class="container text-danger text-center">
     <div *ngIf="spotify.token"><span>Token has been issued</span></div>
-    <div *ngIf="!spotify.token"><span>You have no token</span></div>
+    <div *ngIf="!spotify.token"><span>You have no token - CORS error. See this <a href="https://daveceddia.com/access-control-allow-origin-cors-errors-in-angular/">article</a> for help.</span></div>
   </div>
 </div>
 

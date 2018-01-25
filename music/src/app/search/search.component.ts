@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
   query:string;
   results:Object;
 
-  constructor(private spotify: SpotifyService, private router:Router, private route:ActivatedRoute) {
+  constructor(public spotify: SpotifyService, private router:Router, private route:ActivatedRoute) {
     this.route.queryParams.subscribe(params => {this.query = params['query'] || ''; });
   }
 
