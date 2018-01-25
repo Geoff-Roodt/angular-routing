@@ -4,6 +4,8 @@ import {HttpModule} from '@angular/http'
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
+import {routes as childRoutes, ProductsModule} from './products/products.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -14,7 +16,6 @@ import { LoginComponent } from './login/login.component';
 import { ProtectedComponent } from './protected/protected.component';
 import {LoggedInGuard} from './logged-in.guard';
 import { ProductsComponent } from './products/products.component';
-
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -42,7 +43,8 @@ const routes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ProductsModule
   ],
   providers: [
     AuthInjectables,

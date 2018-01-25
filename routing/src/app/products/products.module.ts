@@ -15,7 +15,7 @@ export const routes: Routes = [
   {path: ':id', component: ProductsComponent},
 ];
 
-@ngModule({
+@NgModule({
   declarations:[
     ProductsComponent,
     ProductComponent,
