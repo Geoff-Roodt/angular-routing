@@ -36,8 +36,7 @@ const routes: Routes = [
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    ProtectedComponent,
-    ProductsComponent
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
