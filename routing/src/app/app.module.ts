@@ -11,6 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 
 import {AuthInjectables} from './auth.service';
 import { LoginComponent } from './login/login.component';
+import { ProtectedComponent } from './protected/protected.component';
+import {LoggedInGuard} from './logged-in.guard';
 
 
 const routes: Routes = [
@@ -20,12 +22,9 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'contactus', redirectTo: 'contact'}
 
-  // required for the authentication demo
-  /*
   {path: 'login', component: LoginComponent},
   {path:'protected', component: ProtectedComponent, canActivate: [LoggedInGuard]},
   {path:'products', component: ProductsComponent, children: childRoutes}
-  */
 ];
 
 @NgModule({
@@ -34,7 +33,8 @@ const routes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +43,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    AuthInjectables
+    AuthInjectables,
+    LoggedInGuard
     //{provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent]
