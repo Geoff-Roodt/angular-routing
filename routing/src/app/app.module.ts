@@ -13,6 +13,7 @@ import {AuthInjectables} from './auth.service';
 import { LoginComponent } from './login/login.component';
 import { ProtectedComponent } from './protected/protected.component';
 import {LoggedInGuard} from './logged-in.guard';
+import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'contactus', redirectTo: 'contact'}
+  {path: 'contactus', redirectTo: 'contact'},
 
   {path: 'login', component: LoginComponent},
   {path:'protected', component: ProtectedComponent, canActivate: [LoggedInGuard]},
@@ -34,7 +35,8 @@ const routes: Routes = [
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

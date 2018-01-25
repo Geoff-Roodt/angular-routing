@@ -1,0 +1,10 @@
+<div class="navLinks">
+  <a [routerLinl]="['./main']">Main</a> |
+  <a [routerLink]="['./more-info']">More Info</a> |
+  Enter Id: <input #id size="6">
+  <button (click)="goToProduct(id.value)">Go</button>
+</div>
+
+<div class="products-area">
+  <router-outlet></router-outlet>
+</div>
