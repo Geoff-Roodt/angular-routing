@@ -1,3 +1,7 @@
+
+<!-- If the Album is not null, then print the following elements -->
+<!-- Once again using Angular's template syntax to print the model properties -->
+
 <div *ngIf="album">
   <h1>{{ album.name }}</h1>
   <h2>{{ album.artists[0].name }}</h2>
@@ -8,6 +12,7 @@
 
   <h3>Tracks</h3>
   <ol>
+    <!-- Foreach track in our collection, print a link to that track and include the id in the link for routing purposes -->
     <li *ngFor="let t of album.tracks.items">
       <a [routerLink]="['/tracks', t.id]">{{ t.name }}</a>
     </li>

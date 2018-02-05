@@ -1,3 +1,5 @@
+// Import all of the core Angular dependencies into our project
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpModule} from '@angular/http';
@@ -12,6 +14,7 @@ import { AlbumComponent } from './album/album.component';
 import { TrackComponent } from './track/track.component';
 import {SpotifyInjectable} from './search/spotify.service';
 
+// Specify the routing table config for our site links (navigation between pages)
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
